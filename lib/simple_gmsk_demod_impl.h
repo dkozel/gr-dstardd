@@ -15,14 +15,17 @@ namespace dstardd {
 
 class simple_gmsk_demod_impl : public simple_gmsk_demod {
 private:
-  // Nothing to declare in this block.
+       char procbit(int bit);
 
 public:
   simple_gmsk_demod_impl();
   ~simple_gmsk_demod_impl();
 
-  // Where all the action really happens
-  int work(int noutput_items, gr_vector_const_void_star &input_items,
+  void forecast (int noutput_items, gr_vector_int &ninput_items_required);
+        
+      int general_work(int noutput_items,
+           gr_vector_int &ninput_items,
+           gr_vector_const_void_star &input_items,
            gr_vector_void_star &output_items);
 };
 

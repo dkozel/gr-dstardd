@@ -19,7 +19,7 @@ namespace dstardd {
  * \ingroup dstardd
  *
  */
-class DSTARDD_API simple_gmsk_demod : virtual public gr::sync_block {
+class DSTARDD_API simple_gmsk_demod : virtual public gr::block {
 public:
   typedef std::shared_ptr<simple_gmsk_demod> sptr;
 

@@ -12,6 +12,9 @@
 include(GrPlatform) #define LIB_SUFFIX
 
 list(APPEND dstardd_sources
+    codec/dstardd.c
+    codec/crc32.c
+    codec/viterbi.c
     dstardd_decoder_impl.cc
     dstardd_encoder_impl.cc
     simple_gmsk_demod_impl.cc)

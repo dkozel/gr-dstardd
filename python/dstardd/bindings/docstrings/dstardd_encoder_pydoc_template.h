@@ -14,14 +14,6 @@
   and will be overwritten during the build process
  */
 
+static const char *__doc_gr_dstardd_dstardd_encoder = R"doc()doc";
 
-
- static const char *__doc_gr_dstardd_dstardd_encoder = R"doc()doc";
-
-
- static const char *__doc_gr_dstardd_dstardd_encoder_dstardd_encoder = R"doc()doc";
-
-
- static const char *__doc_gr_dstardd_dstardd_encoder_make = R"doc()doc";
-
-  
+static const char *__doc_gr_dstardd_dstardd_encoder_make = R"doc()doc";

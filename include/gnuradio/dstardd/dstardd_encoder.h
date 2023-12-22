@@ -19,7 +19,7 @@ namespace dstardd {
  * \ingroup dstardd
  *
  */
-class DSTARDD_API dstardd_encoder : virtual public gr::sync_block {
+class DSTARDD_API dstardd_encoder : virtual public gr::block {
 public:
   typedef std::shared_ptr<dstardd_encoder> sptr;
 
@@ -31,7 +31,7 @@ public:
    * class. dstardd::dstardd_encoder::make is the public interface for
    * creating new instances.
    */
-  static sptr make();
+  static sptr make(bool verbose);
 };
 
 } // namespace dstardd
