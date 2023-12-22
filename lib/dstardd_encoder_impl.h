@@ -17,9 +17,9 @@ class dstardd_encoder_impl : public dstardd_encoder {
 private:
       bool d_verbose;
       unsigned char d_header[41];
-      char d_my1[9]="DL9RDZ  ";
+      char d_my1[9]="DB0VOX A";
       char d_my2[5]="SDR ";
-      char d_your[9]="CQCQCQ  ";
+      char d_your[9]="DG8NGN  ";
       char d_rptr1[9]="DB0VOX A";
       char d_rptr2[9]="DB0VOX G";
 
@@ -35,7 +35,7 @@ private:
 
 
 public:
-  dstardd_encoder_impl(bool verbose);
+  dstardd_encoder_impl(std::string my_call, std::string dst_call, std::string rptr1_call, std::string rptr2_call, bool verbose);
   ~dstardd_encoder_impl();
 
       int general_work(int noutput_items,

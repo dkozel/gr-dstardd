@@ -15,14 +15,14 @@ namespace dstardd {
 using input_type = float;
 using output_type = char;
 
-dstardd_encoder::sptr dstardd_encoder::make(bool verbose) {
-  return gnuradio::make_block_sptr<dstardd_encoder_impl>(verbose);
+dstardd_encoder::sptr dstardd_encoder::make(std::string my_call, std::string dst_call, std::string rptr1_call, std::string rptr2_call, bool verbose) {
+  return gnuradio::make_block_sptr<dstardd_encoder_impl>(my_call, dst_call, rptr1_call, rptr2_call, verbose);
 }
 
 /*
  * The private constructor
  */
-dstardd_encoder_impl::dstardd_encoder_impl(bool verbose)
+dstardd_encoder_impl::dstardd_encoder_impl(std::string my_call, std::string dst_call, std::string rptr1_call, std::string rptr2_call, bool verbose)
     : gr::block(
           "dstardd_encoder",
           gr::io_signature::make(0, 0, 0),
@@ -34,6 +34,16 @@ dstardd_encoder_impl::dstardd_encoder_impl(bool verbose)
       message_port_register_in(pmt::mp("pdu"));
       set_msg_handler(pmt::mp("pdu"), [this](pmt::pmt_t msg) {this->pdu(msg); });
       set_output_multiple(8*8192);  // large enough for large packet
+
+      my_call.insert(0, 8 - my_call.length(), ' ');
+      dst_call.insert(0, 8 - dst_call.length(), ' ');
+      rptr1_call.insert(0, 8 - rptr1_call.length(), ' ');
+      rptr2_call.insert(0, 8 - rptr2_call.length(), ' ');
+
+      strcpy(d_my1, my_call.c_str());
+      strcpy(d_your, dst_call.c_str());
+      strcpy(d_rptr1, rptr1_call.c_str());
+      strcpy(d_rptr2, rptr2_call.c_str());
       
           }
 

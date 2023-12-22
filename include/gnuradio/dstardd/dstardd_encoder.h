@@ -10,6 +10,7 @@
 
 #include <gnuradio/dstardd/api.h>
 #include <gnuradio/sync_block.h>
+#include <string>
 
 namespace gr {
 namespace dstardd {
@@ -31,7 +32,7 @@ public:
    * class. dstardd::dstardd_encoder::make is the public interface for
    * creating new instances.
    */
-  static sptr make(bool verbose);
+  static sptr make(std::string my_call, std::string dst_call, std::string rptr1_call, std::string rptr2_call, bool verbose);
 };
 
 } // namespace dstardd

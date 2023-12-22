@@ -4,7 +4,7 @@ category: '[D-Star DD]'
 
 templates:
   imports: from gnuradio import dstardd
-  make: dstardd.dstardd_encoder(${verbose})
+  make: dstardd.dstardd_encoder(${src_call}, ${dst_call}, ${rptr1_call}, ${rptr2_call}, ${verbose})
 
 parameters:
 - id: verbose

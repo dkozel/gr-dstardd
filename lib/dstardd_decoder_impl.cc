@@ -12,7 +12,7 @@
 namespace gr {
 namespace dstardd {
 
-using input_type = float;
+using input_type = char;
 using output_type = float;
 
 dstardd_decoder::sptr dstardd_decoder::make(bool verbose) {

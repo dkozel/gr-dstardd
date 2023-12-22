@@ -16,7 +16,7 @@
 /* BINDTOOL_GEN_AUTOMATIC(0) */
 /* BINDTOOL_USE_PYGCCXML(0) */
 /* BINDTOOL_HEADER_FILE(dstardd_encoder.h) */
-/* BINDTOOL_HEADER_FILE_HASH(c28c57fb88a45fe06a25981d3f23d4dc) */
+/* BINDTOOL_HEADER_FILE_HASH(4c55b77d59c58d76d587e9064bad3c1a) */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -37,8 +37,9 @@ void bind_dstardd_encoder(py::module &m) {
              std::shared_ptr<dstardd_encoder>>(m, "dstardd_encoder",
                                                D(dstardd_encoder))
 
-      .def(py::init(&dstardd_encoder::make), py::arg("verbose"),
-           D(dstardd_encoder, make))
+      .def(py::init(&dstardd_encoder::make), py::arg("my_call"),
+           py::arg("dst_call"), py::arg("rptr1_call"), py::arg("rptr2_call"),
+           py::arg("verbose"), D(dstardd_encoder, make))
 
       ;
 }
